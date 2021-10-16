@@ -1,0 +1,20 @@
+% echo
+
+# Even though "false/true" is displayed, this will print "0/1"
+echo <mapped>
+
+# If you select "hello" for <x>, the possible values of <y> will be "hello foo" and "hello bar"
+echo <x> <y>
+
+# If you want to ignore the contents of <x> and only print <y>
+: <x>; echo <y>
+
+# This will output "foo\nyes"
+echo foo
+true \
+   && echo yes \
+   || echo no
+
+$ mapped: echo 'false true' | tr ' ' '\n' --- --map "grep -q t && echo 1 || echo 0"
+$ x: echo "hello hi" | tr ' ' '\n'
+$ y: echo "$x foo;$x bar" | tr ';' '\n'
