@@ -1,4 +1,4 @@
-% echo
+% echo,
 
 # Even though "false/true" is displayed, this will print "0/1"
 echo <mapped>
