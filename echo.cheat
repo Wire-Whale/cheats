@@ -6,19 +6,10 @@ echo <mapped>
 # If you select "hello" for <x>, the possible values of <y> will be "hello foo" and "hello bar"
 echo <x> <y>
 
-# If you want to ignore the contents of <x> and only print <y>
-: <x>; echo <y>
-
-# This will output "foo\nyes"
-echo foo
-true \
-   && echo yes \
-   || echo no
-
 # Should print /my/pictures/wallpapers
 echo "<wallpaper_folder>"
 
-# This will result into: cat "file1.json" "file2.json"
+# This will result into: cat "file1.json" "file2.json" if you have file1 and file2!
 cat <jsons>
 
 $ mapped: echo 'false true' | tr ' ' '\n' --- --map "grep -q t && echo 1 || echo 0"
